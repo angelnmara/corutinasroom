@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/concactFragment">
+
+    <fragment
+        android:id="@+id/concactFragment"
+        android:name="com.lamarrulla.examentecnicoandroid.ui.contact.ConcactFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_contact_list" >
+        <action
+            android:id="@+id/action_concactFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment"
+            app:enterAnim="@anim/bounce"
+            app:exitAnim="@anim/move_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactDetailFragment"
+        android:name="com.lamarrulla.examentecnicoandroid.ui.contact_detail.ContactDetailFragment"
+        android:label="fragment_contact_detail"
+        tools:layout="@layout/fragment_contact_detail" >
+        <argument
+            android:name="contact"
+            app:argType="com.lamarrulla.examentecnicoandroid.data.model.Contact"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
